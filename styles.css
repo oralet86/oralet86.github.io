@@ -1,1 +1,13 @@
 /* styles.css */
+
+body {
+    margin: 0px;
+}
+
+.header {
+    padding: 5px;
+    text-align: center;
+    background: #1F2937;
+    color: whitesmoke;
+    font-size: 24px;
+}
