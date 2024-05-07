@@ -7,7 +7,30 @@ body {
 .header {
     padding: 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #1F2937;
     color: whitesmoke;
-    font-size: 24px;
+    font-size: 16px;
+    gap: 20px;
+}
+
+.header h1 {
+    width: 200px;
+    height: auto;
+}
+
+.headerlink {
+    margin: 8px;
+    width: 200px;
+    height: auto;
+    align-self: flex-start;
+    color: grey;
+    text-decoration: none;
+}
+
+.filler {
+    width: 500px;
+    height: auto;
 }
