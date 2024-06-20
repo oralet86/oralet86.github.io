@@ -19,9 +19,8 @@ body {
     padding-right: 250px;
 }
 
-.header h1 {
-    width:  200px;
-    height: auto;
+.headerlower h1 {
+    margin-bottom: 10px;
 }
 
 .headerlink {
@@ -79,11 +78,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
 }
 
 .members {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    width: 25vh;
+    padding: 20px;
 }
 
 .smallpic {
@@ -92,7 +95,7 @@ body {
 }
 
 .bigpic {
-    width: 100%;
+    width: 100vh;
 }
 
 .imgcontainer {
