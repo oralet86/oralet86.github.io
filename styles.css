@@ -15,12 +15,12 @@ body {
     color: whitesmoke;
     font-size: 16px;
     gap: 20px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 .header h1 {
-    width: 200px;
+    width:  200px;
     height: auto;
 }
 
@@ -53,9 +53,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 100px;
-    padding: 50px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-left: 250px;
+    padding-right: 250px;
 
 }
 
@@ -63,12 +64,65 @@ body {
     color: whitesmoke;
     border: none;
     padding: 10px 30px;
-    font-size: 200;
+    font-size: 20px;
+    font-weight: bold;
     background-color: #3882F6;
     border-radius: 8px;
 }
 
 .headerlower h1 {
-    font-size: xx-large;
-    font-weight: 900;
+    font-size: 72px;
+    font-weight: bolder;
+}
+
+.uppermembers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.members {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.smallpic {
+    width: 25vh;
+    height: 25vh;
+}
+
+.bigpic {
+    width: 100%;
+}
+
+.imgcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote {
+    background-color: #E5E7EB;
+    color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.quote p {
+    margin: 0;
+    font-style: italic;
+    font-size: 48px;
+}
+
+.quote h4 {
+    margin: 0;
+    align-self: flex-end;
+    font-size: 32px;
 }
