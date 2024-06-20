@@ -2,18 +2,21 @@
 
 body {
     margin: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
-    padding: 5px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background: #1F2937;
+    background-color: #1F2937;
     color: whitesmoke;
     font-size: 16px;
     gap: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .header h1 {
@@ -23,14 +26,49 @@ body {
 
 .headerlink {
     margin: 8px;
-    width: 200px;
-    height: auto;
-    align-self: flex-start;
     color: grey;
     text-decoration: none;
 }
 
-.filler {
-    width: 500px;
-    height: auto;
+.headerlinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer {
+    background-color: #1F2937;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.headerlower {
+    background-color: #1F2937;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+
+}
+
+.headerlower button {
+    color: whitesmoke;
+    border: none;
+    padding: 10px 30px;
+    font-size: 200;
+    background-color: #3882F6;
+    border-radius: 8px;
+}
+
+.headerlower h1 {
+    font-size: xx-large;
+    font-weight: 900;
 }
