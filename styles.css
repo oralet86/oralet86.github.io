@@ -129,3 +129,44 @@ body {
     align-self: flex-end;
     font-size: 32px;
 }
+
+.calltoaction {
+    background-color: #3882F6;
+    padding: 54px;
+    padding-left: 108px;
+    padding-right: 108px;
+    margin: 108px;
+    margin-left: 216px;
+    margin-right: 216px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.calltoaction h4 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.calltoaction p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.cta_text {
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.calltoaction button {
+    color: whitesmoke;
+    border:whitesmoke solid 4px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3882F6;
+    border-radius: 8px;
+    width: 108px;
+    height: 48px;
+    align-self: center;
+}
