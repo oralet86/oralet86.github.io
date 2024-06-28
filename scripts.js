@@ -7,9 +7,9 @@ function getUserChoice() {
 }
 
 function getServerChoice() {
-    let response = Math.random()*3
+    let response = Math.floor(Math.random()*3)
 
-    switch (response%3) {
+    switch (response) {
         case 0:
             return "rock";
         case 1:
