@@ -81,3 +81,9 @@ function playRound() {
         server_score++;
     }
 }
+
+function playGame(rounds = 5) {
+    for (let i = 0; i < rounds; i++) {
+        playRound();
+    }
+}
