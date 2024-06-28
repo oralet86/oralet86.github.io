@@ -54,3 +54,17 @@ function calculateWinner(first_player_choice, second_player_choice) {
             return 0
         }}
 }
+
+function playRound() {
+    let user_choice = getUserChoice();
+    let server_choice = getServerChoice();
+
+    let result = calculateWinner(user_choice, server_choice);
+    
+    if (result == 1) {
+        user_score++;
+    }
+    else {
+        server_score++;
+    }
+}
