@@ -87,3 +87,5 @@ function playGame(rounds = 5) {
         playRound();
     }
 }
+
+playGame();
