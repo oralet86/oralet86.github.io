@@ -55,6 +55,18 @@ function calculateWinner(first_player_choice, second_player_choice) {
         }}
 }
 
+function announceWinner(result) {
+    if (result == 1) {
+        alert("You won!");
+    }
+    else if (result == 0) {
+        alert("It's a tie!");
+    }
+    else {
+        alert("Computer won!");
+    }
+}
+
 function playRound() {
     let user_choice = getUserChoice();
     let server_choice = getServerChoice();
