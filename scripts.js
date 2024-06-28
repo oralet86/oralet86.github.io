@@ -18,3 +18,39 @@ function getServerChoice() {
             return "scissors";
     }
 }
+
+function calculateWinner(first_player_choice, second_player_choice) {
+    // returns 1 if first player wins, -1 if second player wins, 0 if it's a tie
+    if (first_player_choice == "rock") {
+        if (second_player_choice == "rock") {
+            return 0
+        }
+        else if (second_player_choice == "paper") {
+            return -1
+        }
+        else {
+            return 1
+        }}
+
+    else if (first_player_choice == "paper") {
+        if (second_player_choice == "rock") {
+            return 1
+        }
+        else if (second_player_choice == "paper") {
+            return 0
+        }
+        else {
+            return -1
+        }}
+
+    else if (first_player_choice == "scissors") {
+        if (second_player_choice == "rock") {
+            return -1
+        }
+        else if (second_player_choice == "paper") {
+            return 1
+        }
+        else {
+            return 0
+        }}
+}
