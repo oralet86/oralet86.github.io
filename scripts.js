@@ -72,11 +72,12 @@ function playRound() {
     let server_choice = getServerChoice();
 
     let result = calculateWinner(user_choice, server_choice);
+    announceWinner(result);
     
     if (result == 1) {
         user_score++;
     }
-    else {
+    else if (result == -1) {
         server_score++;
     }
 }
