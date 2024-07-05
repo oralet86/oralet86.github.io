@@ -1,24 +1,6 @@
 let user_score = 0;
 let server_score = 0;
 
-function getUserChoice() {
-    let response = prompt("Write 'rock', 'paper' or 'scissors' to play. \n If you win, you get a cookie!");
-    return (response.toLowerCase().trim())
-}
-
-function getServerChoice() {
-    let response = Math.floor(Math.random()*3)
-
-    switch (response) {
-        case 0:
-            return "rock";
-        case 1:
-            return "paper";
-        case 2:
-            return "scissors";
-    }
-}
-
 function calculateWinner(first_player_choice, second_player_choice) {
     // returns 1 if first player wins, -1 if second player wins, 0 if it's a tie
     if (first_player_choice == "rock") {
@@ -55,18 +37,6 @@ function calculateWinner(first_player_choice, second_player_choice) {
         }}
 }
 
-function announceWinner(result) {
-    if (result == 1) {
-        alert("You won!");
-    }
-    else if (result == 0) {
-        alert("It's a tie!");
-    }
-    else {
-        alert("Computer won!");
-    }
-}
-
 function playRound() {
     let user_choice = getUserChoice();
     let server_choice = getServerChoice();
@@ -79,11 +49,5 @@ function playRound() {
     }
     else if (result == -1) {
         server_score++;
-    }
-}
-
-function playGame(rounds = 5) {
-    for (let i = 0; i < rounds; i++) {
-        playRound();
     }
 }
