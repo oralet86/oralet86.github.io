@@ -5,6 +5,9 @@ const rock_button = document.querySelector("img#rock");
 const paper_button = document.querySelector("img#paper");
 const scissors_button = document.querySelector("img#scissors");
 
+const user_scoreboard = document.querySelector("span#user_score");
+const server_scoreboard = document.querySelector("span#server_score");
+
 rock_button.addEventListener("click", () => { return playRound("rock", getServerChoice()) })
 paper_button.addEventListener("click", () => { return playRound("paper", getServerChoice()) })
 scissors_button.addEventListener("click", () => { return playRound("scissors", getServerChoice()) })
@@ -55,6 +58,7 @@ function playRound(user_choice, server_choice) {
     }
 
     console.log(`scoreboard: user ${user_score} - ${server_score} server`);
+    updateScoreboard();
 }
 
 function getServerChoice() {
@@ -68,4 +72,9 @@ function getServerChoice() {
         case 2:
             return "scissors";
     }
+}
+
+function updateScoreboard() {
+    user_scoreboard.innerText = user_score;
+    server_scoreboard.innerText = server_score;
 }
