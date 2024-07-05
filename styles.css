@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+div.photos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.photos img {
+    width: 50vh;
+    height: 50vh;
+    border: 10px solid black;
+}
