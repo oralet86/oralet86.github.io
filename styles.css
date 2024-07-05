@@ -14,3 +14,18 @@ div.photos img {
     height: 50vh;
     border: 10px solid black;
 }
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.scoreboard {
+    margin: 10vh;
+    font-size: larger;
+}
+
+div h1 {
+    margin: 10vh;
+}
