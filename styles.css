@@ -7,10 +7,15 @@ body {
 
 div.header {
     display: flex;
-    height: 20vh;
+    height: 5em;
     justify-content: space-between;
     align-items: center;
     background-color: beige;
-    padding-left: 10vh;
-    padding-right: 10vh;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+#header_title {
+    font-weight: bold;
+    font-size: 4em;
 }
