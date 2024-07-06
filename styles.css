@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+div.header {
+    display: flex;
+    height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
