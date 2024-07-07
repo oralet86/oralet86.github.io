@@ -12,6 +12,7 @@ grid_button.addEventListener("click", () => {
         alert("Please set the grid size to a valid value!");
     }
     else {
+        clearGrid();
         grid_size = new_grid_size;
         setGrid(grid_size);
     }
@@ -22,6 +23,13 @@ function setGrid(size) {
         grid.appendChild(makeRow(size));
     }
     grid_span.innerText = `Set grid size (current size is ${size})`;
+}
+
+function clearGrid() {
+    rows = grid.querySelectorAll("div.row");
+    rows.forEach(row => {
+        grid.removeChild(row);
+    });
 }
 
 function makeRow(size) {
