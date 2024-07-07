@@ -24,7 +24,7 @@ div.grid {
     display: flex;
     height: 85vh;
     width: 85vh;
-    border: 2vh solid dimgray;
+    border: 1vh solid dimgray;
     align-self: center;
     background-color: aliceblue;
     flex-wrap: wrap;
