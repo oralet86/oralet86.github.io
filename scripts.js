@@ -23,6 +23,12 @@ function setGrid(size) {
         grid.appendChild(makeRow(size));
     }
     grid_span.innerText = `Set grid size (current size is ${size})`;
+    const gridtiles = grid.querySelectorAll("div.gridtile");
+    gridtiles.forEach(gridtile => {
+        gridtile.addEventListener("mouseover", () => {
+            gridtile.style.opacity -= 0.1;
+        })
+    });
 }
 
 function clearGrid() {
@@ -49,6 +55,8 @@ function makeGridTile() {
     grid_tile.className = "gridtile";
     grid_tile.style.flex = "auto";
     grid_tile.style.border = "1px solid dimgray";
+    grid_tile.style.backgroundColor = "aliceblue";
+    grid_tile.style.opacity = 1;
     return grid_tile;
 }
 
