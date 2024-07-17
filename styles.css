@@ -60,7 +60,6 @@ body {
 
 .calculator button {
     padding: 15px;
-
     border: none;
     border-radius: 5px;
     font-size: 30px;
@@ -82,6 +81,8 @@ body {
     grid-column: span 2;
 }
 
-.calculator #equals {
+.calculator .equals {
     background-color: crimson;
 }
+
+button:hover { opacity: 0.3; }
