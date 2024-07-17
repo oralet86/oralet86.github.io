@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+#header_title {
+    font-weight: bold;
+    font-size: 4em;
+    margin: 0;
+}
+
+div.grid {
+    display: flex;
+    height: 85vh;
+    width: 85vh;
+    border: 1vh solid dimgray;
+    align-self: center;
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+div.row {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+div.gridtile {
+    border: 2px solid dimgray;
+    flex: auto;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    width: 0;
+    height: 0;
+  }
