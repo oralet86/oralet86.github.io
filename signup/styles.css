@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+div.rightside img {
+    height: 100vh;
+    width: 30vw;
+    vertical-align: bottom;
+}
+
+div.leftside {
+    height: 100vh;
+    width: 70vw;
+    background-color: lightgoldenrodyellow;
+}
