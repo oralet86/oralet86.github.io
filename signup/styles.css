@@ -4,13 +4,41 @@ body {
     flex-direction: row;
 }
 
-div.rightside img {
+div.leftside {
+    position: relative;
+    height: 100vh;
+    width: 30vw;
+}
+
+div.iconbg {
+    position: absolute;
+    display: flex;
+    align-items: center; /* Center vertically */
+    min-width: 100%;
+    min-height: 20%;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 4.2rem;
+    font-family: roboto;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+div.iconbg * {
+    position: relative;
+    opacity: 1;
+    padding: 10px;
+}
+
+div.leftside img#cat {
     height: 100vh;
     width: 30vw;
     vertical-align: bottom;
+    z-index: -10;
 }
 
-div.leftside {
+div.rightside {
     height: 100vh;
     width: 70vw;
     background-color: lightgoldenrodyellow;
