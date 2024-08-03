@@ -82,6 +82,14 @@ div.rightside .middle {
     font-size: 20px;
 }
 
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: blue;
+}
+
 .application_form > button {
     background-color: darkblue;
     color: beige;
