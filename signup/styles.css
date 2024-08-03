@@ -87,7 +87,14 @@ input:invalid {
 }
 
 input:valid {
-    border-color: blue;
+    border-color: green;
+}
+
+.application_form legend {
+    grid-column: span 2;
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
 }
 
 .application_form > button {
