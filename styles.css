@@ -1,0 +1,8 @@
+.odinprojectlist a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.odinprojectlist a:visited {
+    color: blue;
+}
