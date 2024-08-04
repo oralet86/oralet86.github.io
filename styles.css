@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: row;
-    gap: 20%;
+    justify-content: space-evenly;
 }
 
 .odinprojectlist a {
@@ -11,4 +11,9 @@ body {
 
 .odinprojectlist a:visited {
     color: blue;
+}
+
+.gallery > img {
+    border-radius: 25px;
+    border: 10px solid black;
 }
