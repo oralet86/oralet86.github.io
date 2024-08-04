@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+}
+
 .odinprojectlist a {
     text-decoration: none;
     cursor: pointer;
