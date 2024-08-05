@@ -6,7 +6,8 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 1fr 6fr / minmax(270px, 1fr) 4fr;
+    grid-template-columns: minmax(270px, 1fr) 4fr;
+    min-height: 100vh;
 }
 
 nav {
@@ -63,19 +64,21 @@ nav {
     filter: invert(1);
 }
 
-header {
-    background-color: whitesmoke;
+.content {
     display: flex;
     flex-direction: column;
 }
 
-.upperside {
+header {
+    background-color: #f1f5f9;
     padding: 10px;
     padding-right: 30px;
     padding-left: 30px;
     gap: 100px;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 }
 
 .search {
@@ -131,6 +134,7 @@ header {
 }
 
 .lowerside {
+    background-color: #f1f5f9;
     display: flex;
     padding: 20px;
     padding-left: 30px;
@@ -187,4 +191,8 @@ header {
 
 main {
     background-color: #cbd5e1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 30px;
 }
