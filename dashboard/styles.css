@@ -235,14 +235,19 @@ main {
 
 .project_icons {
     display: flex;
-    gap: 30px;
-    padding: 10px;
-    padding-left: 50px;
+    gap: 20px;
     align-self: flex-end;
 }
 
 .project_icons > img {
     width: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.project_icons > img:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .side_grid {
