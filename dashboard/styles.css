@@ -138,6 +138,27 @@ header {
     justify-content: space-between;
 }
 
+.welcome {
+    padding-left: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.welcome > img {
+    width: 80px;
+    border-radius: 40px;
+}
+
+.text {
+    display: grid;
+    font-weight: bold;
+}
+
+.username {
+    font-size: 30px;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -156,6 +177,7 @@ header {
     font-size: 20px;
     color: white;
     font-weight: bold;
+    align-self: center;
 }
 
 .buttons > button:hover {
