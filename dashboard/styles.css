@@ -105,6 +105,7 @@ header {
     padding: 10px;
     border-radius: 40px;
     transition: background-color 0.1s, box-shadow 0.1s;
+    cursor: pointer;
 }
 
 #notification {
@@ -112,6 +113,7 @@ header {
     padding: 10px;
     border-radius: 40px;
     transition: background-color 0.1s, box-shadow 0.1s;
+    cursor: pointer;
 }
 
 #notification:hover,
@@ -184,6 +186,7 @@ header {
     color: white;
     font-weight: bold;
     align-self: center;
+    cursor: pointer;
 }
 
 .buttons > button:hover {
@@ -209,6 +212,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .project {
@@ -220,11 +224,13 @@ main {
     flex-direction: column;
     gap: 10px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+    color: rgb(90, 90, 90);
 }
 
 .project_text > h2 {
     margin-bottom: 5px;
     font-size: 20px;
+    color: black;
 }
 
 .project_icons {
@@ -237,4 +243,57 @@ main {
 
 .project_icons > img {
     width: 30px;
+}
+
+.side_grid {
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto;
+}
+
+.announcement {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.announcement > span {
+    color: rgb(90, 90, 90);
+    font-size: 14px;
+}
+
+.announcement > span:first-child {
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.announcement:last-child {
+    border: none;
+}
+
+.trending {
+    gap: 30px;
+}
+
+.trend {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.trend > img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.trend_info > span:last-child {
+    color: rgb(90, 90, 90);
 }
