@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header, .footer {
+    background-color: #38bdf8;
+}
+
+.header {
+    display: flex;
+    padding-right: 50px;
+    padding-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+}
+
+.title {
+    font-size: 48px;
+}
+
+.addbook {
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main {
+    background-color: #bae6fd;
+    flex: 1;
+}
