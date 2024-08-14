@@ -56,13 +56,13 @@ body {
 .main {
     flex: 1;
     padding: 50px;
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-left: 180px;
+    padding-right: 180px;
     display: grid;
     gap: 30px;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
     background-color: #dbeafe;
 }
 
