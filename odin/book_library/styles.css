@@ -18,6 +18,8 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 70px;
+    position: sticky;
+    top: 0px;
 }
 
 .header > div {
