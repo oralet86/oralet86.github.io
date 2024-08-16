@@ -44,4 +44,71 @@ class Book {
         Book.addToLibrary(this);
         console.log(Book.library);
     }
+
+    markAsRead() {
+        this.readStatus = true;
+    }
+
+    markAsUnread() {
+        this.readStatus = false;
+    }
+
+    renderBook() {
+        const bookDiv = document.createElement("div");
+        bookDiv.classList.add("book");
+        bookDiv.setAttribute("data-read", (this.readStatus) ? "true" : "false");
+        bookDiv.setAttribute("data-index", Book.library.findIndex(a => {
+            a.title === this.title &&
+            a.pageLength === this.pageLength
+        }));
+        
+        const img = document.createElement("img");
+        img.src = (this.readStatus) ? "svg/book-read.svg" : "svg/book-unread.svg";
+        img.alt = "Book Image";
+        bookDiv.appendChild(img);
+
+        const titleSpan = document.createElement('span');
+        titleSpan.classList.add('title');
+        titleSpan.textContent = this.title;
+        bookDiv.appendChild(titleSpan);
+
+        const pagesContainer = document.createElement('div');
+        pagesContainer.classList.add('pages-container');
+
+        const pageSizeSpan = document.createElement('span');
+        pageSizeSpan.textContent = 'Page size: ';
+        pagesContainer.appendChild(pageSizeSpan);
+
+        const pagesSpan = document.createElement('span');
+        pagesSpan.classList.add('pages');
+        pagesSpan.textContent = this.pageLength;
+        pagesContainer.appendChild(pagesSpan);
+
+        bookDiv.appendChild(pagesContainer);
+
+        const readContainer = document.createElement('div');
+        readContainer.classList.add('read-container');
+
+        const readLabelSpan = document.createElement('span');
+        readLabelSpan.textContent = 'Read? ';
+        readContainer.appendChild(readLabelSpan);
+
+        const readSpan = document.createElement('span');
+        readSpan.classList.add('read');
+        readSpan.textContent = (this.readStatus) ? read_true_emoji : read_false_emoji;
+        readContainer.appendChild(readSpan);
+
+        const changeButton = document.createElement('button');
+        changeButton.classList.add('change');
+        changeButton.textContent = 'Change';
+        readContainer.appendChild(changeButton);
+
+        bookDiv.appendChild(readContainer);
+
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('remove');
+        removeButton.textContent = 'Remove Book';
+        bookDiv.appendChild(removeButton);
+    }
 }
+
