@@ -132,11 +132,20 @@ class Book {
     }
 
     removeButtonInit() {
-
+        const removeButton = this.node.querySelector(".remove");
+        removeButton.addEventListener("click", () => {
+            bookshelf.removeChild(this.node);
+            Book.library.splice(this.getIndex(), 1);
+            this.node = null;
+        })
     }
 
     changeButtonInit() {
-
+        const changeButton = this.node.querySelector(".change");
+        changeButton.addEventListener("click", () => {
+            this.readStatus = !this.readStatus;
+            this.renderReadStatus();
+        });
     }
 }
 
