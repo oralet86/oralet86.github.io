@@ -21,6 +21,8 @@ addBookForm.addEventListener("submit", (event) => {
     addBookDialog.close();
 })
 
+const bookshelf = document.querySelector(".main");
+
 
 class Book {
     static library = [];
@@ -30,19 +32,23 @@ class Book {
     }
 
     static removeFromLibrary(book) {
-        const index = Book.library.findIndex(a => {
-            a.title === book.title &&
-            a.pageLength === book.pageLength
-        });
-        Book.library.remove(index);
+        Book.library.remove(book.getIndex);
     }
 
     constructor(title = "Lord of The Rings", pageLength = 1984, readStatus = false) {
+        Book.addToLibrary(this);
         this.title = title;
         this.pageLength = pageLength;
         this.readStatus = readStatus;
-        Book.addToLibrary(this);
-        console.log(Book.library);
+        this.renderBook();
+    }
+
+    getIndex() {
+        return Book.library.findIndex(a => {
+            return (a.title === this.title &&
+                a.pageLength === this.pageLength &&
+                a.readStatus === this.readStatus);
+        });
     }
 
     markAsRead() {
@@ -57,13 +63,9 @@ class Book {
         const bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
         bookDiv.setAttribute("data-read", (this.readStatus) ? "true" : "false");
-        bookDiv.setAttribute("data-index", Book.library.findIndex(a => {
-            a.title === this.title &&
-            a.pageLength === this.pageLength
-        }));
         
         const img = document.createElement("img");
-        img.src = (this.readStatus) ? "svg/book-read.svg" : "svg/book-unread.svg";
+        img.src = (this.readStatus) ? "svg/book-read.svg" : "svg/book-noread.svg";
         img.alt = "Book Image";
         bookDiv.appendChild(img);
 
@@ -109,6 +111,14 @@ class Book {
         removeButton.classList.add('remove');
         removeButton.textContent = 'Remove Book';
         bookDiv.appendChild(removeButton);
+
+        bookshelf.appendChild(bookDiv);
     }
 }
+
+const lotr_test = new Book("Lord of The Rings", "198", false);
+const animal_test = new Book("Animal Farm", "123", true);
+console.log(lotr_test.getIndex());
+console.log(animal_test.getIndex());
+
 
