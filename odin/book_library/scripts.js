@@ -15,7 +15,6 @@ addBookForm.addEventListener("submit", (event) => {
     const formPages = document.getElementById("pages");
     const formRead = document.getElementById("read");
 
-    console.log(formTitle.value, formPages.value, formRead.checked);
     new Book(formTitle.value, formPages.value, formRead.checked);
 
     addBookDialog.close();
@@ -40,7 +39,11 @@ class Book {
         this.title = title;
         this.pageLength = pageLength;
         this.readStatus = readStatus;
+        this.node;
+
+        // Preperation for display
         this.renderBook();
+        this.buttonInit();
     }
 
     getIndex() {
@@ -62,10 +65,8 @@ class Book {
     renderBook() {
         const bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
-        bookDiv.setAttribute("data-read", (this.readStatus) ? "true" : "false");
         
         const img = document.createElement("img");
-        img.src = (this.readStatus) ? "svg/book-read.svg" : "svg/book-noread.svg";
         img.alt = "Book Image";
         bookDiv.appendChild(img);
 
@@ -97,7 +98,6 @@ class Book {
 
         const readSpan = document.createElement('span');
         readSpan.classList.add('read');
-        readSpan.textContent = (this.readStatus) ? read_true_emoji : read_false_emoji;
         readContainer.appendChild(readSpan);
 
         const changeButton = document.createElement('button');
@@ -113,12 +113,34 @@ class Book {
         bookDiv.appendChild(removeButton);
 
         bookshelf.appendChild(bookDiv);
+        this.node = bookDiv;
+        this.renderReadStatus();
+    }
+
+    renderReadStatus() {
+        this.node.setAttribute("data-read", (this.readStatus) ? "true" : "false");
+
+        const img = this.node.querySelector("img");
+        img.src = (this.readStatus) ? "svg/book-read.svg" : "svg/book-noread.svg";
+        const readSpan = this.node.querySelector(".read");
+        readSpan.textContent = (this.readStatus) ? read_true_emoji : read_false_emoji;
+    }
+
+    buttonInit() {
+        this.removeButtonInit();
+        this.changeButtonInit();
+    }
+
+    removeButtonInit() {
+
+    }
+
+    changeButtonInit() {
+
     }
 }
 
 const lotr_test = new Book("Lord of The Rings", "198", false);
 const animal_test = new Book("Animal Farm", "123", true);
-console.log(lotr_test.getIndex());
-console.log(animal_test.getIndex());
 
 
