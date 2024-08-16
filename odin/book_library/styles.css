@@ -119,3 +119,25 @@ body {
     text-align: center;
     padding: 10px;
 }
+
+#addbook-dialog {
+    padding: 50px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#addbook-dialog > form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#addbook-dialog > form > div {
+    display: flex;
+    gap: 15px;
+}
+
+#addbook-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+}

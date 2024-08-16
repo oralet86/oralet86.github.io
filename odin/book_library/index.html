@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <title>Library</title>
 </head>
@@ -16,6 +16,23 @@
         <button class="addbook">Add Book</button>
     </div>
     <div class="main">
+        <dialog id="addbook-dialog">
+            <form method="dialog" id="addbook-form">
+                <div>
+                    <label for="title">Name</label>
+                    <input type="text" name="title" id="title" placeholder="Name" autocomplete="off">    
+                </div>
+                <div>
+                    <label for="pages">Pages</label>
+                    <input type="number" name="pages" id="pages" placeholder="Page" autocomplete="off">    
+                </div>
+                <div>
+                    <label for="read">Have you read this book?</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+                <button id="confirm">Add Book</button>
+            </form>
+        </dialog>
         <div class="book">
             <img src="svg/book-read.svg" alt="Book Image">
             <span class="title">The Lord of The Rings</span>
