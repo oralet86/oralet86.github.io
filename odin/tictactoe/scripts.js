@@ -86,12 +86,74 @@ const gameboard = (() => {
     };
 })();
 
+class player {
+    constructor(selection) {
+        this.selection = selection; // X or O
+    }
+}
+
 const gameboardDisplayer = (() => {
 
 })();
 
-class player {
-    constructor() {
-        
+const gameLogic = (() => {
+    let firstPlayer;
+    let secondPlayer;
+    let choice;
+
+    function selectMark() {
+        while(true) {
+            choice = prompt(`If you want to start as ${x}, enter ${x}. If you want to start as ${o}, enter ${o}.`);
+            if(choice == null) {
+                console.log("No selection made. Please enter a valid choice.");
+                continue;
+            } else if(choice.toUpperCase() === x) {
+                firstPlayer = new player(x);
+                secondPlayer = new player(o);
+                console.log("Choice is x");
+                break;
+            } else if(choice.toUpperCase() === o) {
+                firstPlayer = new player(o);
+                secondPlayer = new player(x);
+                console.log("Choice is o");
+                break;
+            } else {
+                console.log("Invalid entry.");
+            }
+        }
     }
-}
+
+    function playRound(player) {
+
+    }
+
+    function endGame(player) {
+
+    }
+
+    function gameLoop() {
+        while(true) {
+            // First players' turn
+            playRound(firstPlayer);
+            if(gameboard.checkWinCondition(firstPlayer.selection)) {
+                endGame(firstPlayer);
+            }
+            // Second players' turn
+            playRound(secondPlayer);
+            if(gameboard.checkWinCondition(secondPlayer.selection)) {
+                endGame(secondPlayer);
+            }
+        }
+    }
+
+    function startGame() {
+        selectMark();
+        gameLoop();
+    }
+
+    return {
+        startGame
+    };
+})();
+
+gameLogic.startGame();
