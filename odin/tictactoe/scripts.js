@@ -10,6 +10,14 @@ const gameboard = (() => {
         board[row][column] = selection;
     };
 
+    function isEmpty(row, column) {
+        return (board[row][column] === empty);
+    }
+
+    function getSize() {
+        return size;
+    }
+
     function printBoard() {
         let board_ = "";
         board.forEach(row => {
@@ -83,12 +91,15 @@ const gameboard = (() => {
         printBoard,
         clearBoard,
         checkWinCondition,
+        isEmpty,
+        getSize
     };
 })();
 
 class player {
-    constructor(selection) {
+    constructor(selection, name = "Player") {
         this.selection = selection; // X or O
+        this.name = name;
     }
 }
 
@@ -124,24 +135,59 @@ const gameLogic = (() => {
     }
 
     function playRound(player) {
+        while(true) {
+            let whichRow, whichColumn;
+            while(true) {
+                whichRow = prompt("Enter which row you'll place a mark on.");
+                if(!validateRound(whichRow)) {
+                    console.log("Invalid selection");
+                    continue;
+                }
+                break;
+            }
+            while(true) {
+                whichColumn = prompt("Enter which column you'll place a mark on.");
+                if(!validateRound(whichColumn)) {
+                    console.log("Invalid selection");
+                    continue;
+                }
+                break;
+            }
+            if(!gameboard.isEmpty(whichRow, whichColumn)) {
+                console.log("That box has been already marked. You need to pick another one.");
+                continue;
+            }
+            gameboard.setTile(whichRow, whichColumn, player.selection);
+            break;
+        }
+    }
 
+    function validateRound(num) {
+        if(num >= 0 && num <= gameboard.getSize()-1) {
+            return true;
+        }
     }
 
     function endGame(player) {
-
+        console.log(`Player ${player.selection} has won the game!`);
+        gameboard.clearBoard;
     }
 
     function gameLoop() {
         while(true) {
             // First players' turn
             playRound(firstPlayer);
+            gameboard.printBoard();
             if(gameboard.checkWinCondition(firstPlayer.selection)) {
                 endGame(firstPlayer);
+                break;
             }
             // Second players' turn
             playRound(secondPlayer);
+            gameboard.printBoard();
             if(gameboard.checkWinCondition(secondPlayer.selection)) {
                 endGame(secondPlayer);
+                break;
             }
         }
     }
