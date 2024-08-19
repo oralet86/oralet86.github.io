@@ -202,4 +202,4 @@ const gameLogic = (() => {
     };
 })();
 
-gameLogic.startGame();
+// gameLogic.startGame();
