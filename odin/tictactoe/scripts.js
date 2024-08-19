@@ -1,17 +1,21 @@
-const x = "X";
-const o = "O";
-const empty = "_";
+const marks = (() => {
+    const x = "X";
+    const o = "O";
+    const e = "_"; // Empty
+    
+    return { x, o, e };
+})();
 
 const gameboard = (() => {
     const size = 3;
-    const board = Array(size).fill(null).map(x => Array(size).fill(empty));
+    const board = Array(size).fill(null).map(x => Array(size).fill(marks.e));
 
     function setTile(row, column, selection) {
         board[row][column] = selection;
     };
 
     function isEmpty(row, column) {
-        return (board[row][column] === empty);
+        return (board[row][column] === marks.e);
     }
 
     function getSize() {
@@ -33,7 +37,7 @@ const gameboard = (() => {
     function clearBoard() {
         for(let i = 0; i < size; i++) {
             for(let j = 0; j < size; j++) {
-                setTile(i, j, empty);
+                setTile(i, j, marks.e);
             }
         }
     }
@@ -87,7 +91,7 @@ const gameboard = (() => {
     }
 
     function isDraw() {
-        return board.some(tile => tile === empty);
+        return board.some(tile => tile === marks.e);
     }
 
     return {
@@ -118,18 +122,18 @@ const gameLogic = (() => {
 
     function selectMark() {
         while(true) {
-            choice = prompt(`If you want to start as ${x}, enter ${x}. If you want to start as ${o}, enter ${o}.`);
+            choice = prompt(`If you want to start as ${marks.x}, enter ${marks.x}. If you want to start as ${marks.o}, enter ${marks.o}.`);
             if(choice == null) {
                 console.log("No selection made. Please enter a valid choice.");
                 continue;
-            } else if(choice.toUpperCase() === x) {
-                firstPlayer = new player(x);
-                secondPlayer = new player(o);
+            } else if(choice.toUpperCase() === marks.x) {
+                firstPlayer = new player(marks.x);
+                secondPlayer = new player(marks.o);
                 console.log("Choice is x");
                 break;
-            } else if(choice.toUpperCase() === o) {
-                firstPlayer = new player(o);
-                secondPlayer = new player(x);
+            } else if(choice.toUpperCase() === marks.o) {
+                firstPlayer = new player(marks.o);
+                secondPlayer = new player(marks.x);
                 console.log("Choice is o");
                 break;
             } else {
