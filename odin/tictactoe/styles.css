@@ -12,28 +12,87 @@ body {
 
 .header {
     background-color: red;
-    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.buttons {
     padding-right: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons > button {
+    padding: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.title {
+    padding-left: 40px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 10px;
+    font-size: 48px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.scoreboard > p {
+    margin: 0;
+    padding: 10px;
 }
 
 .content {
     background-color: aqua;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
     flex: 1;
+    gap: 5%;
+}
+
+.player {
+    background-color: aquamarine;
+    gap: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.player > img {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20%;
+}
+
+.first {
+    margin-right: auto;
+}
+
+.second {
+    margin-left: auto;
 }
 
 .board {
     background-color: bisque;
-    margin: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
     border-radius: 10px;
     gap: 30px;
     width: 35%;
+    align-self: center;
+    margin: 20px;
 }
 
 .tile {

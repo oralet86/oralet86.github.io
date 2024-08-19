@@ -10,18 +10,36 @@
 <body>
     <div class="header">
         <h1 class="title">Tic-Tac-Toe</h1>
+        <div class="scoreboard">
+            <p class="firstplayerscore">0</p><p> - </p><p class="secondplayerscore">0</p>
+        </div>
+        <div class="buttons">
+            <button id="clear">Clear Scoreboard</button>
+            <button id="switch">Switch Marks</button>
+            <button id="start">Start Game</button>
+        </div>
     </div>
     <div class="content">
+        <div class="first player">
+            <label for="player_name" class="player_name">First Player's Name: </label>
+            <input name="player_name" type="text" id="player_name">
+            <img src="svg/circle.svg" alt="Circle">
+        </div>
         <div class="board">
-            <div class="tile" data-row="0" data-column="0"><img src="svg/circle.svg" alt="Circle"></div>
-            <div class="tile" data-row="0" data-column="1"><img src="svg/cross.svg" alt="Cross"></div>
-            <div class="tile" data-row="0" data-column="2"></div>
+            <div class="tile" data-row="0" data-column="0" data-tile-content="o"><img src="svg/circle.svg" alt="Circle"></div>
+            <div class="tile" data-row="0" data-column="1" data-tile-content="x"><img src="svg/cross.svg" alt="Cross"></div>
+            <div class="tile" data-row="0" data-column="2"  data-tile-content="empty"><img src="" alt=""></div>
             <div class="tile" data-row="1" data-column="0"></div>
             <div class="tile" data-row="1" data-column="1"></div>
             <div class="tile" data-row="1" data-column="2"></div>
             <div class="tile" data-row="2" data-column="0"></div>
             <div class="tile" data-row="2" data-column="1"></div>
             <div class="tile" data-row="2" data-column="2"></div>
+        </div>
+        <div class="second player">
+            <label for="player_name" class="player_name">Second Player's Name: </label>
+            <input name="player_name" type="text" id="player_name">
+            <img src="svg/cross.svg" alt="Cross">
         </div>
     </div>
     <div class="footer"><p>copyright @ trolololo</p></div>
