@@ -37,7 +37,7 @@ const gameboard = (() => {
             }
         }
     }
-    
+
     function checkWinCondition(selection) {
         // Checks for winning horizontally
         if(board.some(row => row.every(tile => tile === selection))) {
