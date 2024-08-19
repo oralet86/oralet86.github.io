@@ -86,15 +86,22 @@ const gameboard = (() => {
         return false;
     }
 
+    function isDraw() {
+        return board.some(tile => tile === empty);
+    }
+
     return {
         setTile,
         printBoard,
         clearBoard,
         checkWinCondition,
         isEmpty,
+        isDraw,
         getSize
     };
 })();
+
+// TO DO: Switch the player class with a players IIFE that holds all the player data.
 
 class player {
     constructor(selection, name = "Player") {
@@ -103,11 +110,8 @@ class player {
     }
 }
 
-const gameboardDisplayer = (() => {
-
-})();
-
 const gameLogic = (() => {
+    let hasStarted = false;
     let firstPlayer;
     let secondPlayer;
     let choice;
@@ -199,6 +203,20 @@ const gameLogic = (() => {
 
     return {
         startGame
+    };
+})();
+
+const gameboardDisplayer = (() => {
+    const startGameButton = document.getElementById("start");
+    const switchMarkButton = document.getElementById("switch");
+    const clearScoreboardButton = document.getElementById("clear");
+
+    startGameButton.addEventListener("click", gameLogic.startGame);
+    switchMarkButton.addEventListener("click", players.switchMarks);
+    clearScoreboardButton.addEventListener("click", players.clearScoreboard);
+
+    return {
+
     };
 })();
 
