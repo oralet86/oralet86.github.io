@@ -105,14 +105,48 @@ const gameboard = (() => {
     };
 })();
 
-// TO DO: Switch the player class with a players IIFE that holds all the player data.
-
-class player {
-    constructor(selection, name = "Player") {
-        this.selection = selection; // X or O
-        this.name = name;
+const players = (() => {
+    class player {
+        constructor(selection, name = "Player", score = 0) {
+            this.selection = selection; // X or O
+            this.name = name;
+            this.score = score;
+        }
     }
-}
+
+    let leftPlayer = new player(marks.x);
+    let rightPlayer = new player(marks.o);
+
+    let currentPlayer = leftPlayer;
+
+    function switchMarks() {
+        const tempMark = leftPlayer.selection;
+        leftPlayer.selection = rightPlayer.selection;
+        rightPlayer.selection = tempMark;
+    }
+
+    function resetPlayers() {
+        leftPlayer = new player(marks.x);
+        rightPlayer = new player(marks.o);
+        currentPlayer = leftPlayer;
+    }
+
+    function switchCurrentPlayer() {
+        if (currentPlayer.marks === leftPlayer.marks) {
+            currentPlayer = rightPlayer;
+        }
+        else {
+            currentPlayer = leftPlayer;
+        }
+    }
+
+    return {
+        switchMarks,
+        resetPlayers,
+        switchCurrentPlayer,
+        currentPlayer,
+    }
+})();
 
 const gameLogic = (() => {
     let hasStarted = false;
