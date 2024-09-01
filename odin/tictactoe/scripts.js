@@ -107,8 +107,8 @@ const gameboard = (() => {
 
 const players = (() => {
     class player {
-        constructor(selection, name = "Player", score = 0) {
-            this.selection = selection; // X or O
+        constructor(mark, name = "Player", score = 0) {
+            this.mark = mark; // X or O
             this.name = name;
             this.score = score;
         }
@@ -120,9 +120,9 @@ const players = (() => {
     let currentPlayer = leftPlayer;
 
     function switchMarks() {
-        const tempMark = leftPlayer.selection;
-        leftPlayer.selection = rightPlayer.selection;
-        rightPlayer.selection = tempMark;
+        const tempMark = leftPlayer.mark;
+        leftPlayer.mark = rightPlayer.mark;
+        rightPlayer.mark = tempMark;
     }
 
     function resetPlayers() {
@@ -132,7 +132,7 @@ const players = (() => {
     }
 
     function switchCurrentPlayer() {
-        if (currentPlayer.marks === leftPlayer.marks) {
+        if (currentPlayer.mark === leftPlayer.mark) {
             currentPlayer = rightPlayer;
         }
         else {
@@ -148,114 +148,14 @@ const players = (() => {
     }
 })();
 
-const gameLogic = (() => {
-    let hasStarted = false;
-    let firstPlayer;
-    let secondPlayer;
-    let choice;
-
-    function selectMark() {
-        while(true) {
-            choice = prompt(`If you want to start as ${marks.x}, enter ${marks.x}. If you want to start as ${marks.o}, enter ${marks.o}.`);
-            if(choice == null) {
-                console.log("No selection made. Please enter a valid choice.");
-                continue;
-            } else if(choice.toUpperCase() === marks.x) {
-                firstPlayer = new player(marks.x);
-                secondPlayer = new player(marks.o);
-                console.log("Choice is x");
-                break;
-            } else if(choice.toUpperCase() === marks.o) {
-                firstPlayer = new player(marks.o);
-                secondPlayer = new player(marks.x);
-                console.log("Choice is o");
-                break;
-            } else {
-                console.log("Invalid entry.");
-            }
-        }
-    }
-
-    function playRound(player) {
-        while(true) {
-            let whichRow, whichColumn;
-            while(true) {
-                whichRow = prompt("Enter which row you'll place a mark on.");
-                if(!validateRound(whichRow)) {
-                    console.log("Invalid selection");
-                    continue;
-                }
-                break;
-            }
-            while(true) {
-                whichColumn = prompt("Enter which column you'll place a mark on.");
-                if(!validateRound(whichColumn)) {
-                    console.log("Invalid selection");
-                    continue;
-                }
-                break;
-            }
-            if(!gameboard.isEmpty(whichRow, whichColumn)) {
-                console.log("That box has been already marked. You need to pick another one.");
-                continue;
-            }
-            gameboard.setTile(whichRow, whichColumn, player.selection);
-            break;
-        }
-    }
-
-    function validateRound(num) {
-        if(num >= 0 && num <= gameboard.getSize()-1) {
-            return true;
-        }
-    }
-
-    function endGame(player) {
-        console.log(`Player ${player.selection} has won the game!`);
-        gameboard.clearBoard;
-    }
-
-    function gameLoop() {
-        while(true) {
-            // First players' turn
-            playRound(firstPlayer);
-            gameboard.printBoard();
-            if(gameboard.checkWinCondition(firstPlayer.selection)) {
-                endGame(firstPlayer);
-                break;
-            }
-            // Second players' turn
-            playRound(secondPlayer);
-            gameboard.printBoard();
-            if(gameboard.checkWinCondition(secondPlayer.selection)) {
-                endGame(secondPlayer);
-                break;
-            }
-        }
-    }
-
-    function startGame() {
-        selectMark();
-        gameLoop();
-    }
-
-    return {
-        startGame
-    };
-})();
-
-const gameboardDisplayer = (() => {
+const tictactoeUI = (() => {
     const startGameButton = document.getElementById("start");
     const switchMarkButton = document.getElementById("switch");
-    const clearScoreboardButton = document.getElementById("clear");
 
     startGameButton.addEventListener("click", gameLogic.startGame);
     switchMarkButton.addEventListener("click", players.switchMarks);
-    clearScoreboardButton.addEventListener("click", players.clearScoreboard);
 
     return {
 
     };
 })();
-
-// gameLogic.startGame();
