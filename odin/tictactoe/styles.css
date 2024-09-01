@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-    background-color: red;
+    background-color: #3C3D37;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,15 +36,13 @@ body {
 
 .title {
     padding-left: 40px;
+    color: #ECDFCC;
 }
 
 .scoreboard {
     display: flex;
-    gap: 10px;
     font-size: 48px;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
+    color: #ECDFCC;
 }
 
 .scoreboard > p {
@@ -53,7 +51,7 @@ body {
 }
 
 .content {
-    background-color: aqua;
+    background-color: #1E201E;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -63,16 +61,17 @@ body {
 }
 
 .player {
-    background-color: aquamarine;
+    background-color: #697565;
     gap: 20px;
     padding: 40px;
     display: flex;
     flex-direction: column;
+    color: #ECDFCC;
 }
 
 .player > img {
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 20%;
+    background-color: #ECDFCC;
 }
 
 .first {
@@ -84,7 +83,7 @@ body {
 }
 
 .board {
-    background-color: bisque;
+    background-color: #3C3D37;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
@@ -96,7 +95,7 @@ body {
 }
 
 .tile {
-    background-color: white;
+    background-color: #ECDFCC;
     font-weight: bold;
     border-radius: 10px;
     aspect-ratio: 1 / 1;
@@ -110,12 +109,12 @@ body {
 .tile > img {
     width: 80%;
     object-fit: fill;
-    filter: invert(1);
 }
 
 .footer {
     display: flex;
     justify-content: center;
-    background-color: grey;
+    background-color: #3C3D37;
     margin-top: auto;
+    color: #ECDFCC;
 }
