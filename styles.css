@@ -1,14 +1,14 @@
 body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .odinprojectlist a {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .odinprojectlist a:visited {
-    color: blue;
+  color: blue;
 }
