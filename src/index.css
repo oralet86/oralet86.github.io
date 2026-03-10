@@ -30,9 +30,6 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-
-/* ── Hero ─────────────────────────────────────── */
-
 .hero {
   position: relative;
   height: 50vh;
@@ -123,8 +120,16 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg);
+  transition: background 0.3s ease;
 }
 
+.social-link:hover {
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg));
+}
 
 .theme-toggle-wrapper {
   position: absolute;
@@ -180,16 +185,47 @@ body {
   background: #EDEAE6;
 }
 
-
 .nav {
   position: sticky;
   top: 0;
   z-index: 10;
   background: var(--bg);
   display: flex;
-  justify-content: center;
+  align-items: center;
   border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
+  padding: 0 1.25rem;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-theme-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.nav-theme-toggle .theme-toggle-wrapper {
+  position: static;
+}
+
+.nav-theme-toggle--visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-button {
@@ -207,7 +243,6 @@ body {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
-
 
 .content-section {
   scroll-margin-top: 48px;
@@ -244,7 +279,6 @@ body {
   min-height: 80px;
   padding: 1.5rem;
 }
-
 
 .project-card {
   display: flex;
@@ -309,4 +343,116 @@ body {
 .project-card-link-placeholder {
   width: 36px;
   height: 36px;
+}
+
+@media (max-width: 640px) {
+
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: unset;
+    padding: 2rem 1.5rem 3.5rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .photo-frame {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio-name {
+    font-size: 1.9rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    padding: 0 0.75rem;
+  }
+
+  .nav-spacer {
+    order: 1;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 0.75rem 0.5rem;
+    flex-shrink: 0;
+    order: 2;
+  }
+
+  .nav-theme-toggle {
+    flex: 1;
+    order: 3;
+  }
+
+  .nav-buttons {
+    order: 4;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-buttons--open {
+    display: flex;
+  }
+
+  .nav-button {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .nav-button.active {
+    border-bottom-color: transparent;
+    border-left-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+  }
+
+  /* Sections */
+  .section-heading {
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+
+  .item-list-wrapper {
+    padding: 0.5rem 1.25rem 1.5rem;
+  }
+
+  /* Project card — stack vertically */
+  .project-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-card-image {
+    width: 100%;
+  }
+
+  .project-card-links {
+    flex-direction: row;
+    flex-shrink: 0;
+    align-self: auto;
+    padding: 0.25rem 0 0;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
 }
